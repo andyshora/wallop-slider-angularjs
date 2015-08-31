@@ -5,7 +5,7 @@
     
     .directive('wallopSlider', function () {
         return {
-          template: '<div class="Wallop {{animationClass}}"><div class="Wallop-list"><div class="Wallop-item {{itemClasses[$index]}}" ng-repeat="i in images"><img src="{{i}}"></div></div><button ng-show="images.length>1" class="Wallop-buttonPrevious" ng-disabled="prevDisabled" ng-click="onPrevButtonClicked()">Previous</button><button ng-show="images.length>1" class="Wallop-buttonPrevious" ng-disabled="nextDisabled" ng-click="onNextButtonClicked()">Next</button></div>',
+          template: '<div class="Wallop {{animationClass}}"><div class="Wallop-list"><div class="Wallop-item {{itemClasses[$index]}}" ng-repeat="i in images"><img src="{{i}}"></div></div><button ng-show="images.length>1" class="Wallop-buttonPrevious" ng-disabled="prevDisabled" ng-click="onPrevButtonClicked()">Previous</button><button ng-show="images.length>1" class="Wallop-buttonNext" ng-disabled="nextDisabled" ng-click="onNextButtonClicked()">Next</button></div>',
           restrict: 'EA',
           transclude: true,
           replace: false,
