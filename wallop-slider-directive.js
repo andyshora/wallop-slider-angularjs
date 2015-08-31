@@ -1,11 +1,11 @@
 
 (function() {
 
-  angular.module('MyApp', [])
+  angular.module('wallopSlider', [])
     
     .directive('wallopSlider', function () {
         return {
-          template: '<div class="wallop-slider {{animationClass}}"><ul class="wallop-slider__list"><li class="wallop-slider__item {{itemClasses[$index]}}" ng-repeat="i in images"><img src="{{i}}"></li></ul><button ng-show="images.length>1" class="wallop-slider__btn wallop-slider__btn--previous btn btn--previous" ng-disabled="prevDisabled" ng-click="onPrevButtonClicked()">Previous</button><button ng-show="images.length>1" class="wallop-slider__btn wallop-slider__btn--next btn btn--next" ng-disabled="nextDisabled" ng-click="onNextButtonClicked()">Next</button></div>',
+          template: '<div class="Wallop {{animationClass}}"><div class="Wallop-list"><div class="Wallop-item {{itemClasses[$index]}}" ng-repeat="i in images"><img src="{{i}}"></div></div><button ng-show="images.length>1" class="Wallop-buttonPrevious" ng-disabled="prevDisabled" ng-click="onPrevButtonClicked()">Previous</button><button ng-show="images.length>1" class="Wallop-buttonPrevious" ng-disabled="nextDisabled" ng-click="onNextButtonClicked()">Next</button></div>',
           restrict: 'EA',
           transclude: true,
           replace: false,
@@ -28,18 +28,18 @@
 
             // set animation class corresponding to animation defined in CSS. e.g. rotate, slide
             if ($scope.animation) {
-              $scope.animationClass = 'wallop-slider--' + $scope.animation;
+              $scope.animationClass = 'Wallop--' + $scope.animation;
             }
 
             var _displayOptions = {
-              btnPreviousClass: 'wallop-slider__btn--previous',
-              btnNextClass: 'wallop-slider__btn--next',
-              itemClass: 'wallop-slider__item',
-              currentItemClass: 'wallop-slider__item--current',
-              showPreviousClass: 'wallop-slider__item--show-previous',
-              showNextClass: 'wallop-slider__item--show-next',
-              hidePreviousClass: 'wallop-slider__item--hide-previous',
-              hideNextClass: 'wallop-slider__item--hide-next'
+              btnPreviousClass: 'Wallop-item--previous',
+              btnNextClass: 'Wallop-item--next',
+              itemClass: 'Wallop-item__item',
+              currentItemClass: 'Wallop-item--current',
+              showPreviousClass: 'Wallop-item--showPrevious',
+              showNextClass: 'Wallop-item--showNext',
+              hidePreviousClass: 'Wallop-item--hidePrevious',
+              hideNextClass: 'Wallop-item--hideNext'
             };
 
             function updateClasses() {
